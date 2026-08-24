@@ -1,0 +1,33 @@
+env_id: myoHandPenTwirlRandom-v0
+seed: 0
+
+total_timesteps: 5_000_000
+eval_freq: 50_000
+save_freq: 625_000
+
+reward_type: dense
+norm_obs: True
+norm_reward: False
+clip_obs: 10.0
+
+env_kwargs:
+  seed: ${env.seed}
+  max_episode_steps: 50
+
+task_variables_keys:
+  - obj_des_rot
+  - obj_err_pos
+  - obj_err_rot  
+
+camera:
+  fps: 25
+  type: free # 'free' or 'tracking'
+  tracked_body: r_humerus # used if tracking
+  lookat: [-0.220, -0.47, 1.440] # used if free
+  distance: 0.6
+  azimuth: 90
+  elevation: -45
+
+render:
+  target_pos: [-0.400, -0.470, 1.46]
+  target_ball_alpha: 0.1

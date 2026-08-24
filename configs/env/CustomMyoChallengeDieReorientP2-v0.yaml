@@ -1,0 +1,57 @@
+env_id: CustomMyoChallengeDieReorientP2-v0
+seed: 0
+
+total_timesteps: 10_000_000
+eval_freq: 100_000
+save_freq: 1_250_000
+
+reward_type: dense
+norm_obs: True
+norm_reward: False
+clip_obs: 10.0
+
+env_kwargs:
+  seed: ${env.seed}
+  max_episode_steps: 150
+  weighted_reward_keys:
+    pos_dist: 1.
+    rot_dist: 0.2
+    pos_dist_diff: 1e2
+    rot_dist_diff: 1e1
+    alive: 1
+    act_reg: 0
+    solved: 2
+    done: 0
+    sparse: 0
+
+  goal_pos: [-0.0, 0.0]
+  goal_rot: [-0.785, 0.785]
+  obj_size_change: 0
+  obj_friction_change: [0, 0, 0]
+  enable_rsi: false
+  rsi_distance_pos: null
+  rsi_distance_rot: null
+  goal_rot_x: null
+  goal_rot_y: null
+  goal_rot_z: null
+  guided_trajectory_steps: 0
+
+task_variables_keys:
+  - goal_pos
+  - pos_err
+  - goal_rot  
+  - rot_err
+
+camera:
+  fps: 25
+  type: free # 'free' or 'tracking'
+  tracked_body: r_humerus # used if tracking
+  lookat: [-0.220, -0.47, 1.440] # used if free
+  distance: 0.6
+  azimuth: 90
+  elevation: -45
+
+render:
+  target_x_offset: -0.06
+  target_y_offset: 0.065
+  target_ball_alpha: 0.1

@@ -1,0 +1,7 @@
+defaults:
+  - /algo@: sac  # Merges sac.yaml into this config's root
+  - _self_
+  
+name: play_phase_agent
+
+controlled_variable: Qvel

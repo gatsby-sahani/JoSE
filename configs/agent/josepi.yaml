@@ -1,0 +1,28 @@
+defaults:
+  - /algo@: sac  # Merges sac.yaml into this config's root
+  - _self_
+  
+name: josepi
+
+controlled_variable: Qvel
+
+optim:
+  dynamics_learning_rate: 1.0e-5
+  dynamics_lr_boundaries: ["${trainer.total_timesteps}"]
+  dynamics_lr_scales: [0.0]
+  dynamics_dropout: [0.5, 0.5]
+  rank_k: 15 # (null for full rank, i.e. number of joints)
+  subspace_basis_method: normalize
+  max_grad_norm: null
+  pre_train_buffer_path: null
+  pre_train_vecenv_path: null
+  pre_train_gradient_steps: 0
+  pre_train_updates: 0
+
+net_arch: 
+  dyn: [400, 300]
+
+use_float64: True
+
+update_dyanmics_during_training: true
+use_play_phase_stats: true 

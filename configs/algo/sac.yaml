@@ -1,0 +1,23 @@
+name: sac
+
+optim:
+  learning_rate: 3.0e-4
+  qf_learning_rate: ${.learning_rate}
+  gamma: 0.98
+  tau: 0.02
+  buffer_size: 300_000
+  batch_size: 256
+  gradient_steps: -1
+  train_freq: 1
+  learning_starts: 3_000
+
+norm_act: True
+
+net_arch:
+  pi: [400, 300]
+  qf: [400, 300]
+
+use_float64: False
+
+load_dir: null
+load_step: null

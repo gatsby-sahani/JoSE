@@ -1,0 +1,31 @@
+env_id: myoHandReorientID-v0
+seed: 0
+
+reward_type: dense
+norm_obs: True
+norm_reward: False
+clip_obs: 10.0
+
+env_kwargs:
+  seed: ${env.seed}
+  max_episode_steps: 50
+  weighted_reward_keys:
+    pos_align: 1.0
+    rot_align: 1.0
+    act_reg: 5.0
+    drop: 5.0
+    bonus: 10.0
+
+task_variables_keys:
+  - obj_des_rot
+  - obj_err_pos
+  - obj_err_rot  
+
+camera:
+  fps: 25
+  type: free # 'free' or 'tracking'
+  tracked_body: r_humerus # used if tracking
+  lookat: [-0.1, 0., 1.5] # used if free
+  distance: 1.35
+  azimuth: 90
+  elevation: -10

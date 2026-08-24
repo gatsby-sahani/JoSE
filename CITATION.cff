@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Joint-Space Empowerment for Dexterous Coordination in Tendon-Driven Hands"
+message: "If you use this software, please cite it using the metadata below."
+type: software
+version: 1.0.0
+date-released: "2026-09-01"
+authors:
+  - family-names: "Heald"
+    given-names: "James"
+    email: "jamesbheald@gmail.com"
+repository-code: "https://github.com/gatsby-sahani/JoSE"
+url: "https://joint-space-empowerment.github.io/"
+license: MIT
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: "Heald"
+      given-names: "James"
+    - family-names: "Caggiano"
+      given-names: "Vittorio"
+    - family-names: "Kumar"
+      given-names: "Vikash"
+    - family-names: "Sahani"
+      given-names: "Maneesh"
+  title: "Joint-Space Empowerment for Dexterous Coordination in Tendon-Driven Hands"
+  year: 2026
+  collection-title: "Proceedings of the 43rd International Conference on Machine Learning (ICML)"

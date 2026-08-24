@@ -1,0 +1,12 @@
+name: sac_trainer
+
+num_training_envs: 20
+total_timesteps: ${env.total_timesteps}
+
+save_freq: ${env.save_freq}
+save_replay_buffer: False
+save_vecnormalize: True
+
+num_eval_envs: 25
+eval_freq: ${env.eval_freq}
+fallback_freq: 20_000_000

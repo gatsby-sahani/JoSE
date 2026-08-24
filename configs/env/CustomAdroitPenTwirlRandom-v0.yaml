@@ -1,0 +1,31 @@
+
+env_id: CustomAdroitPenTwirlRandom-v0
+seed: 0
+
+total_timesteps: 5_000_000
+eval_freq: 50_000
+save_freq: 625_000
+
+reward_type: dense
+norm_obs: True
+norm_reward: False
+clip_obs: 10.0
+
+env_kwargs:
+  seed: ${env.seed}
+  max_episode_steps: 50
+  add_wrist_pronation_supination: true
+
+task_variables_keys:
+  - obj_des_rot
+  - obj_err_pos
+  - obj_err_rot
+
+camera:
+  fps: 25
+  type: free # 'free' or 'tracking'
+  tracked_body: forearm # used if tracking
+  lookat: [0.01, 0.05, 1.47]
+  distance: 0.8
+  azimuth: 270
+  elevation: -45

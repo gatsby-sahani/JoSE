@@ -1,0 +1,39 @@
+
+env_id: CustomMyoChallengeBaodingP1-v1
+seed: 0
+
+total_timesteps: 10_000_000
+eval_freq: 100_000
+save_freq: 1_250_000
+
+reward_type: dense
+norm_obs: True
+norm_reward: False
+clip_obs: 10.0
+
+env_kwargs:
+  seed: ${env.seed}
+  max_episode_steps: 200
+  weighted_reward_keys:
+    pos_dist_1: 1
+    pos_dist_2: 1
+    act_reg: 0
+    alive: 1
+    solved: 5
+    done: 0
+    sparse: 0
+
+task_variables_keys:
+  - target1_pos
+  - target2_pos
+  - target1_err
+  - target2_err
+
+camera:
+  fps: 25
+  type: free # 'free' or 'tracking'
+  tracked_body: r_humerus # used if tracking
+  lookat: [-0.220, -0.47, 1.440] # used if free
+  distance: 0.6
+  azimuth: 90
+  elevation: -45

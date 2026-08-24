@@ -1,0 +1,19 @@
+defaults:
+  - /algo@: sac  # Merges sac.yaml into this config's root
+  - _self_
+  
+name: sac_sar_state_dependent
+
+optim:
+  decoder_learning_rate: 3e-4
+  pre_train_gradient_steps: 20
+  pre_train_updates: 50_000
+  n_syn: 20
+  max_grad_norm: null
+
+net_arch:
+  dec: [400, 300]
+
+use_play_phase_stats: true
+
+controlled_variable: Qvel # specified because controlled variable was added to the buffer of the model trained in the play phase

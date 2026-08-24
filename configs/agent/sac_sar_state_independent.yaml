@@ -1,0 +1,9 @@
+defaults:
+  - /algo@: sac  # Merges sac.yaml into this config's root
+  - _self_
+  
+name: sac_sar_state_independent
+
+synnosyn: true
+
+controlled_variable: Qvel # specified because controlled variable was added to the buffer of the model trained in the play phase

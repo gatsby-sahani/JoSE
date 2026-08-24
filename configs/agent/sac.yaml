@@ -1,0 +1,3 @@
+defaults:
+  - /algo@: sac  # Merges sac.yaml into this config's root
+  - _self_

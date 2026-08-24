@@ -1,0 +1,14 @@
+defaults:
+  - agent: josepi
+  - env: CustomMyoChallengeBaodingP1-v1
+  - trainer: sac_trainer
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  - _self_ 
+
+hydra:  
+  output_subdir: null
+  run:  
+    dir: .
+
+# https://stackoverflow.com/a/70777327/7950697 to disable output and logging
